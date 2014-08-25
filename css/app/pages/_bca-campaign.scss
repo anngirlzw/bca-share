@@ -1,0 +1,84 @@
+/*-------- BCA Campaign Page Styles ----------*/
+.campaign-section{
+	padding-top:20px;
+	padding-bottom:0px;
+
+	.section-title{
+		background:none;
+		margin: 0;
+
+		.section-title-inner{
+			border:none;
+			padding:0;
+
+			h2{
+				padding-left:0;
+			}
+		}
+	}
+}
+
+#campaign-video-section{
+	.section-title{
+		background:none;
+		margin: 0;
+
+		.section-title-inner{
+			border:none;
+			padding:0;
+
+			h2{
+				margin-top:0;
+			}
+		}
+	}
+	hr{
+		margin-top:20px;
+		margin-bottom: 0;
+	}
+}
+
+#history-section{
+	.section-title{
+		background:none;
+		margin: 0;
+
+		.section-title-inner{
+			h2{
+				color:$grey;
+			}
+		}
+	}
+}
+
+#pink-button-section{
+	padding-top:60px;
+	padding-bottom:40px;
+ 	text-align: center;
+}
+
+/*------- Responsive - Tablet - Landscape --------*/
+@media (min-width: $screen-lg) {
+	
+}
+
+/*------- Responsive - Tablet --------*/
+@media (max-width: $screen-xs) {
+	.campaign-section{
+		.section-title{
+			.section-title-inner{
+				h2{
+					padding-left:20px;
+				}
+			}
+		}
+		p{
+			padding-left:20px;
+		}
+	}
+}
+
+/*------- Responsive - Mobile --------*/
+@media (max-width: $screen-xs) {
+	
+}

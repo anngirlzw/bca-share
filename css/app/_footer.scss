@@ -1,0 +1,90 @@
+/*-------- Footer Styles ----------*/
+
+#footer{
+	background:$dark-grey;
+	padding:40px 20px 0 20px;
+	margin:40px 0 0 0;
+
+	div.container{
+		padding:20px 0 60px 0;
+		position:relative;
+
+		border-top:1px solid $gray;
+	}
+	div#copyright{
+		margin-top:20px;
+		padding:20px 0 0 0;
+		border-top:1px solid $gray;
+		a{
+			margin-right:20px;
+			color:$grey;
+			line-height: 16px;
+		}
+		a:hover{
+			color:#fff;
+		}
+		span{
+			margin-right:20px;
+		}
+	}
+	p{
+		font-size: 12px;
+		line-height: 16px;
+		padding-right:30px;
+	}
+	h3{
+		color:#CCC;
+		font-size: 16px;
+		font-weight: 400;
+		margin:0 0 10px 0;
+		padding:0;
+		line-height: 18px;
+	}
+	ul.about-nav{
+		li{
+			a{
+				color:$grey;
+				line-height: 16px;
+			}
+			a:hover{
+				color:#fff;
+			}
+		}
+	}
+	ul.social-nav{
+		position:absolute;
+		right:4px;
+		top:0;
+
+		li a{
+			background-color:#fff;
+		}
+		li a:hover{
+			background-color:$pink;
+		}
+	}
+}
+
+/*------- Responsive - Tablet - Landscape --------*/
+@media (max-width: $screen-sm) {
+	
+}
+
+/*------- Responsive - Tablet Portrait --------*/
+@media (max-width: $screen-xs) {
+	p{
+		padding:0 0 14px 0;
+	}
+	#footer{
+		padding:30px 20px 0 20px;
+	}
+}
+
+/*------- Responsive - Mobile --------*/
+@media (max-width: $screen-mobile) {
+	#footer{
+		ul.social-nav{
+			width:100px;
+		}
+	}
+}

@@ -1,0 +1,441 @@
+/*-------- Main Styles ----------*/
+@import '_mixins.scss';
+@import 'libs/bootstrap/bootstrap.scss';
+@import '_variables.scss';
+@import 'http://fonts.googleapis.com/css?family=Playfair+Display';
+@import 'http://fonts.googleapis.com/css?family=Open+Sans:400,300';
+
+
+body,html{
+	font-size:12px;
+	margin:0;
+	padding:0;
+	font-family: $body-font-family;
+	width:100%;
+	height:100%;
+}
+
+html{
+	overflow:auto;
+}
+
+body{
+	@include prefix(transition, padding $transition-speed);
+
+    overflow: hidden;
+    background-color: #fff;
+    height: auto
+}
+
+h1,h2,h3,h4{
+	font-weight:400;
+}
+
+div, ul, li{
+	vertical-align: top;
+}
+
+h3 {
+	font-weight:300;
+	color:$grey;
+	font-size: 18px;
+	line-height:24px;
+}
+
+p{
+	font-size:14px;
+	color:$grey;
+	line-height:22px;
+	font-weight:300;
+}
+
+ul{
+	padding:0; 
+	margin:0;
+	list-style:none;
+}
+
+li{
+	padding:0; 
+	margin:0;
+}
+
+a{
+	@include prefix(transition, background-color $transition-speed);
+}
+
+a, a:link, a:visited, a:hover{
+	cursor: pointer;
+	text-decoration: none;
+	color:$pink;
+}
+
+textarea {
+	resize: none;
+	border: none;
+	width: 100%;
+	height: 300px;
+	color: #aaa;
+	font-size: 22px;
+	letter-spacing:0.6px;
+}
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color: rgba(170, 170, 170, 0.8);
+    box-shadow: 0 1px 1px rgba(170, 170,170, 0.075) inset, 0 0 8px rgba(170, 170,170, 0.6);
+    outline: 0 none;
+}
+
+#donate-now{
+	padding-top:40px;
+
+	.donate-content-container {
+		padding-left:20px;	
+
+		h2{
+			font-size: 18px;
+			margin:-3px 0 4px 0;
+			color:$pink;
+		}
+		p{
+			font-size: 13px;
+			line-height: 17px;
+			max-width: 540px;
+		}
+	}
+
+	.pink-button.donate-btn {
+		padding:8px 20px;
+		max-width: 250px;
+		height: 65px;
+		display: block;
+
+		img {
+			height: 34px;
+			margin-right: 20px;
+		}
+
+		span {
+			border-left: 1px solid white;
+			padding: 12px 8px 12px 22px;
+		}
+	}
+}
+
+#this-years-stories{
+	.section-title{
+		margin: 30px 0 0 0;
+		padding:0;
+	}
+	.slider-container{
+		padding:0;
+	}
+}
+
+.align-center{
+	text-align:center !important;
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-left: 8px solid $pink;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.arrow-white-r {
+	width: 0; 
+	height: 0; 
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-left: 8px solid #eee;
+	display: inline-block;
+	vertical-align: top;
+	
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	-transition: 0.3s;
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid $pink;
+	display: inline-block;
+}
+
+a.pink-button{
+  padding: 15px 20px 15px 20px;
+  text-decoration: none;
+  line-height: 50px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  background-color: $pink;
+}
+
+a.pink-button:hover {
+  background-color: #EEE;
+  color:$pink;
+
+  .arrow-white-r {
+	  border-left: 8px solid $pink;
+	  -webkit-transition: 0.3s;
+	  -moz-transition: 0.3s;
+	  -ms-transition: 0.3s;
+	  -o-transition: 0.3s;
+	  -transition: 0.3s;
+	}
+}
+
+div#main-container{
+	min-width:100%;
+	background-color:#FFF;
+	padding:80px 0px 0px 0px;
+    margin-left: 0;
+
+    @include prefix(transition, margin-left $transition-speed);
+}
+
+#page-header{
+	padding:4px 30px;
+	img#campaign-logo{
+		padding-right:10px;
+		margin:3px 0 0 0;
+		width: 100%;
+		max-width: 326px;
+	}
+	#eh-quote{
+		text-align:right;
+		padding-top:2px;
+
+		p{
+			font-size: 12px;
+			line-height: 16px;
+			float: right;
+			max-width: 370px;
+			color:#888;
+			font-style:italic;
+		}
+	}
+}
+
+ul.social-nav{
+	li{
+		display: inline-block;
+		margin-left: 4px;
+		margin-bottom: 6px;
+		a{
+			display: block;
+			border-radius:20px;
+			height: 40px;
+			width: 40px;
+			background:$dark-grey;
+			background-size: 40px 80px;
+		}
+		a:hover{
+			background-color:$pink;
+			background-position:0 -40px;
+		}
+	}
+	li.facebook-btn{
+		a{
+			background-image:url(../img/facebook-icon.png);
+		}
+	}
+	li.twitter-btn{
+		a{
+			background-image:url(../img/twitter-icon.png);
+		}
+	}
+	li.instagram-btn{
+		a{
+			background-image:url(../img/instagram-icon.png);
+		}
+	}
+	li.youtube-btn{
+		a{
+			background-image:url(../img/youtube-icon.png);
+		}
+	}
+}
+
+body.subnav-open{
+	padding-top:40px;
+}
+
+body.sidebar-open{
+	div#sidebar, div#sidebar-background{
+		margin-left:0;
+	}
+	div#main-container, div#header{
+		margin-left:$sidebar-width;
+	}
+}
+
+div#feed{
+	margin-top:20px;
+
+	div.post{
+		margin-bottom:4px;
+
+		div.post-inner{
+			cursor: pointer;
+			width:100%;
+			height:100%;
+			position:relative;
+
+			img.avatar{
+				width:50px;
+				float: none;
+				margin-right: 10px;
+			}
+			div.photo{
+				height:280px;
+				background-size:cover;
+				background-position:center center;
+			}
+			div.hover-state{
+				div.author{
+					display: inline-block;
+					p{
+						padding:0;
+						margin:0;
+						line-height: 18px;
+					}
+					p.alias{
+						color:$pink;
+					}
+				}
+
+				div.desc{
+					margin-top:8px;
+				}
+
+				background:rgba(255,255,255,.85);
+				padding:10px;
+				width:100%;
+				position:absolute;
+				bottom:0;
+				left:0;
+				z-index: 1;
+				opacity: 0;
+
+				@include prefix(transition, opacity $transition-speed);
+			}
+		}
+		div.post-inner:hover{
+			div.hover-state{
+				opacity:1;
+			}
+		}
+	}
+}
+
+/*------- Responsive - Tablet - Landscape --------*/
+@media (max-width: $screen-md) {
+	
+}
+
+/*------- Responsive - Tablet Portrait --------*/
+@media (min-width: $screen-sm) {
+	body.sidebar-open{
+		div#sidebar, div#sidebar-background{
+			margin-left:-$sidebar-width;
+		}
+		div#main-container, div#header{
+			margin-left:0;
+		}
+	}
+}
+
+/*------- Responsive - Mobile --------*/
+@media (max-width: $screen-sm) {
+	#page-header{
+		padding:0 20px;
+		text-align: center;
+		#eh-quote{
+			p{
+				text-align:left;
+				float:none;
+				max-width: 100%;
+				margin-bottom: 0;
+				padding-bottom:0;
+				padding-left:0;
+			}
+		}
+		img#campaign-logo{
+			margin:3px 0 20px 0;
+		}
+	}
+
+	.section-title{
+		.section-title-inner{
+			border-left:none;
+		}
+	}
+
+	#donate-now{
+		text-align: center;
+
+		.donate-content-container{
+			padding-right:20px;	
+			padding-top:20px;
+		}
+
+		.pink-button.donate-btn {
+			float:none;
+			display: inline-block;
+		}
+	}
+}
+
+@media (max-width: $screen-xs) {
+	.section-title{
+		.section-title-inner{
+			h2{
+				padding-left:20px;
+			}
+		}
+	}
+}
+
+/*------- Responsive - Tablet - Portrait --------*/
+@media (max-width: $screen-mobile) {
+	div#feed{
+		div.post{
+			div.post-inner{
+				div.photo{
+					height:320px;
+				}
+				div.hover-state{
+					opacity: 1 !important;
+					position:static;
+				}
+			}
+		}
+	}
+}
+
+@import '_header.scss';
+@import '_footer.scss';
+@import '_sidebar.scss';
+@import '_slider.scss';
+@import '_page.scss';
+
+@import 'pages/_home.scss';
+@import 'pages/_press.scss';
+@import 'pages/_learn-more.scss';
+@import 'pages/_jeanette-story.scss';
+@import 'pages/_pink-ribbon-products.scss';
+@import 'pages/_about.scss';
+@import 'pages/_bca-campaign.scss';
+@import 'pages/_bcastrength.scss';
+@import 'pages/_global-ambassadors.scss';

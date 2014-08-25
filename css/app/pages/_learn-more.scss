@@ -1,0 +1,64 @@
+/*-------- Learn More Page Styles ----------*/
+
+.learn-more-section{
+	padding:0;
+
+	p{
+		margin-bottom: 20px;
+	}
+}
+
+div#sponsors-section.learn-more-section {
+	padding: 0;
+	text-align:center;
+
+	.section-title{
+		background:none;
+
+		.section-title-inner{
+			border-left:none;
+
+			h2{
+				color:$grey;
+				padding:0;
+				background:none;
+			}
+		}
+	}
+
+	img {
+		margin:0 10px;
+	}
+}
+
+
+/*------- Responsive - Tablet - Landscape --------*/
+@media (max-width: $screen-sm) {
+	.learn-more-section{
+		p{
+			padding:0 20px;
+		}
+	}
+		
+	div#sponsors-section.learn-more-section {
+		img {
+			margin:0 2px;
+			width:30%;
+		}
+	}
+}
+
+/*------- Responsive - Tablet Portrait --------*/
+@media (max-width: $screen-xs) {
+	
+}
+
+/*------- Responsive - Mobile --------*/
+@media (max-width: $screen-mobile) {
+	div#sponsors-section.learn-more-section {
+		img {
+			margin:0 2px;
+			width:45%;
+		}
+	}
+}

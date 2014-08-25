@@ -1,0 +1,63 @@
+/*-------- Sidebar Styles ----------*/
+div#sidebar-background{
+	z-index:-1;
+	position: fixed;
+	top:0;
+	margin-left:-$sidebar-width;
+	height: 200%;
+	width:$sidebar-width;
+	background-color:#111;
+
+    @include prefix(transition, margin-left $transition-speed);
+}
+
+div#sidebar{
+	position: absolute;
+	top:0;
+	margin-left:-$sidebar-width;
+	width:$sidebar-width;
+	padding:0 1px 0 0;
+	background-color:#111;
+
+	@include prefix(transition, margin $transition-speed);
+
+	ul.main-nav{
+		li{
+			margin-bottom:1px;
+			a{
+				padding:0 20px 0 20px;
+				line-height: 43px;
+				display: block;
+				background-color: $dark-grey;
+				color: #DDD;
+			}
+			a:hover{
+				color: #FFF;
+			}
+		}
+		li:first-child{
+			a{
+				line-height: 59px;
+			} 
+		}
+		li.active{
+			a{
+				color: $pink;
+				background-color: #222;
+			}
+		}
+	}
+
+	ul.social-nav{
+		margin:12px 0 7px 10px;
+	}
+}
+
+/*------- Responsive - Tablet --------*/
+@media (max-width: $screen-sm) {
+}
+
+/*------- Responsive - Mobile --------*/
+@media (max-width: $screen-xs) {
+	
+}

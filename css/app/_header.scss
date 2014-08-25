@@ -1,0 +1,236 @@
+/*-------- Header Styles ----------*/
+
+div#header{
+    @include prefix(transition, margin-left $transition-speed);
+
+	z-index: 5;
+	width:100%;
+	position: fixed;
+	left:0;
+	top:0;
+
+	.tablet{
+		display: none;
+	}
+	.mobile{
+		display: none;
+	}
+	
+	div#language-dropdown{
+		z-index:6000;
+		float:right;
+
+		button, button:hover, button:focus, button:active, button.active, .open>button.dropdown-toggle{
+			min-width:$language-menu-width;
+			font-size: $body-text-size;
+			border-radius: 0;
+			border:none;
+			border-left:1px solid $dark-grey;
+			padding:0;
+			background-color:#111;
+			color: $pink;
+			height: 60px;
+			margin-top:0;
+
+			span.caret{
+				margin-left: 10px;
+			}
+		}
+		button:hover{
+			color: #FFF;
+		}
+
+		div{
+			border-radius:0;
+			padding:10px 0;
+			width:456px;
+			margin-left:-303px;
+
+			ul{
+				float: left;
+				border-left:solid 1px #DDD;
+
+				li{
+					text-align: center;
+					width:$language-menu-width;
+					padding:1px;
+					a{
+						color: #666;
+						display: block;
+						text-decoration: none;
+						font-size: $body-text-size;
+						line-height: 28px;
+					}
+					a:hover{
+						color: $dark-grey;
+						background-color:$pink;
+					}
+				}
+			}
+
+			ul:first-child{
+				border-left:none;
+			}
+
+			ul.col-2{
+				display: none;
+			}
+		}
+	}
+	div#main-nav-container{
+		display: inline-block;
+		z-index: 2;
+		position:absolute;
+		background-color:#111;
+		width:100%;
+
+		ul.main-nav{
+			margin:0;
+			padding:0;
+			display: inline-block;
+			margin-left:20px;
+
+			li{
+				display: inline-block;
+				a{
+					display: block;
+					line-height:60px;
+					padding:0 10px;
+					color: #DDD;
+					background-color:#111;
+				}
+				a:hover{
+					color: #FFF;
+				}
+			}
+			li.active a{
+				color: $pink;
+			}
+		}
+		#hamburger{
+			display: none;
+
+   			@include prefix(transition, background-position $transition-speed);
+    		@include prefix(transition-delay, .41s);
+
+			cursor: pointer;
+			background-image: url(../img/hamburger-icon.png);
+			margin: 1px 0 0 0;
+			width:58px;
+			height:58px;
+			background-size: 116px 58px;
+			background-position-x:-58px;
+			background-repeat:no-repeat;
+		}
+		#hamburger.active{
+			background-position-x:0px;
+		}
+		#logo{
+			display: inline-block;
+			padding:10px 16px 10px 16px;
+			border-right:1px solid $dark-grey;
+			margin-left:20px;
+
+			img{
+				height: 40px;
+			}
+		}
+		
+		ul.social-nav{
+			position:absolute;
+			right: 170px;
+			top:10px;
+		}
+	}
+	div#sub-nav-container{
+		background-color:$dark-grey;
+		left:0;
+		z-index: -1;
+		position:absolute;
+		width:100%;
+		margin-top: 15px;
+
+		ul.main-nav{
+			background-color:$dark-grey;
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			z-index: 2;
+			padding-left:106px;
+
+   			@include prefix(transition, top $transition-speed);
+
+			li{
+				display: inline-block;
+
+				a{
+					display: block;
+					color:#CCC;
+					padding:12px 14px;
+				}
+				a:hover{
+					background-color:#222;
+					color: #FFF;
+				}
+			}
+			li.active a{
+				background-color:#222;
+				color: $pink;
+			}
+		}
+		ul.main-nav.active{
+			z-index: 4; 
+			top:40px;
+		}
+	}
+}
+
+/*------- Responsive - Tablet Landscape --------*/
+@media (max-width: $screen-sm) {
+	div#header {
+		ul.main-nav{
+			display: none !important;
+		}
+
+		div#main-nav-container{
+			#hamburger{
+				display: inline-block;
+				border-right:1px solid $dark-grey;
+			}
+			ul.social-nav{
+				display: none;
+			}
+			#logo{
+				padding:10px 16px 10px 16px;
+				border-right:none;
+				margin-left:-1px;
+			}
+		}
+	}
+}
+
+/*------- Responsive - Tablet Portrait --------*/
+@media (max-width: $screen-xs) {
+	div#header {
+		div#language-dropdown{
+			div{
+				margin-left:-151px;
+
+				ul.col-2{
+					display: inline-block !important;
+				}
+				ul.col-3{
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+/*------- Adabptive - Mobile --------*/
+.mobile #language-dropdown{
+}
+.mobile div#header{
+		
+}

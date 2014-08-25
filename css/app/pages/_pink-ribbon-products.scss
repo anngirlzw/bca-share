@@ -1,0 +1,86 @@
+/*-------- Pink Ribbon Products Page Styles ----------*/
+
+.pink-products-section{
+	.section-title{
+		background:none;
+		margin: 0;
+
+		.section-title-inner{
+			border:none;
+			padding:0;
+
+			h2{
+				padding-left:0;
+			}
+		}
+	}
+
+	.product-container{
+		.product-container-inner{
+			padding:0 20px 0 0;
+			
+			h3{
+				line-height: 19px;
+				font-size:16px;
+				color: $pink;
+				margin: 10px 0 4px 0;
+			}
+			img{
+				border:1px solid $pink;
+				width:100%;
+				height: auto;
+			}
+			p{
+				height: 70px;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-sm) {
+	// .pink-products-section{
+	// 	padding:0 20px;
+	// }
+}
+
+/*------- Responsive - Tablet Portrait --------*/
+@media (max-width: $screen-xs) {
+	.pink-products-section {
+		padding:10px 20px 0 20px;
+
+		.product-container{
+			width:50%;
+			margin:0;
+			padding:0;
+			display:inline-block;
+		}
+	}
+}
+
+@media (max-width: $screen-mobile) {
+	.pink-products-section .product-container{
+		width:50%;
+		margin:0;
+		padding:0;
+		display:inline-block;
+
+		p{
+			font-size:12px;
+			line-height: 16px;
+			padding:0;
+		}
+
+		.product-container-inner{
+			padding:0 10px 0 0;
+		}
+	}
+
+	#products-section{
+		padding-right:10px;
+	}
+}
+
+@media (max-width: 400px) {
+	.pink-products-section .product-container{
+	}
+}

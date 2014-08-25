@@ -1,0 +1,58 @@
+/*-------- Global Ambassadors Page Styles ----------*/
+.ambassador-section{
+	padding:30px;
+
+	.profile-photo{
+		margin-bottom: 30px;
+	}
+	.profile-info{
+		margin-bottom: 20px;
+		padding-left:30px;
+		padding-right:30px;
+	}
+
+	h1 {
+		margin-top:-4px;
+		color:$pink;
+		font-size: 30px;
+	}
+
+	h3{
+		color:$grey;
+		margin:0;
+	}
+
+	p.ambassador-quote {
+		color:$dark-grey;
+		margin-top:20px;
+		border-top:1px solid $pink;
+		border-bottom:1px solid $pink;
+		padding:20px 0;
+		font-size: 18px;
+		line-height: 26px;
+		letter-spacing: 0.5px;
+	}
+}
+
+/*------- Responsive - Tablet - Landscape --------*/
+@media (max-width: $screen-sm) {
+	
+}
+
+/*------- Responsive - Tablet Portrait --------*/
+@media (max-width: $screen-xs) {
+	
+}
+
+/*------- Responsive - Mobile --------*/
+@media (max-width: $screen-mobile) {
+	.ambassador-section{
+		padding:20px;
+
+		.profile-info{
+			padding-left:0px;
+			padding-right:0px;
+		}
+
+	}
+}
