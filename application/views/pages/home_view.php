@@ -11,6 +11,7 @@
 		</div>
 	</div>
 </div>
+
 	
 <div class="page-content container-fluid">
 	<div class="row">
@@ -59,17 +60,25 @@
 						  		<p><? echo $this->langutil->line( "select_photo" ); ?></p>
 						  		<!-- upload photo and preview -->
 						  		<input type="file" style="display:none" id="upload-image" multiple="multiple"></input>
+						  		
 								<div id="upload" class="drop-area">
-									<div id="pc_icon"></div>
-								  ADD PHOTO
+								<div id="pc_icon"></div>
+								<div  class="caption-wrapper">
+									<h4>ADD PHOTO</h4>
+								  	<h5>From Your Computer</h5>
+								</div>									
+								  
 								</div>
 
 								<!-- facebook photo selector -->
 								<div id="upload-facebookImg" data-toggle="modal" href="#facebook_photo_selector">
 									<div id="fb_icon"></div>
-									ADD PHOTO FROM FACEBOOK
+									<div class="caption-wrapper">
+										<h4>ADD PHOTO</h4>
+									  	<h5>From Facebook</h5>
+									</div>	
 								</div>
-								<!-- <button id="upload-facebookImg" data-toggle="modal" href="#facebook_photo_selector">ADD PHOTO FROM FACEBOOK</button> -->
+
 								<div class="thumb-container">
 								  
 								  <!-- image thumbnail -->
@@ -216,21 +225,21 @@
 	<div id="facebook_photo_selector" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" id="fb-selector-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Choose a photo</h4>
+					<h4 class="modal-title"><? echo $this->langutil->line( "fb-selector-title" ); ?></h4>
+					<select class="fbps-albums pull-right" name="facebook_photo_album"></select>
 				</div>
 				<div class="modal-body">
 					<div class="form">
-						<label>Select Facebook Album:</label>
-						<select class="fbps-albums" name="facebook_photo_album"></select>
+						<label><? echo $this->langutil->line( "fb-selector-subtitle" ); ?></label>
+						
 					</div>
 					<hr>
 					<div class="fbps-photos clearfix"></div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default fbps-cancel" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary fbps-select" data-dismiss="modal">Select Photo</button>
+					<a class="pink-button fbps-select" data-dismiss="modal"><? echo $this->langutil->line( "fb-selector-add-btn" ); ?></a>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->

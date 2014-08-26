@@ -20,7 +20,7 @@ ul#page-tabs {
 
 	li:first-child{
 		// border-left:1px solid $pink;
-	}
+	} 
 
 	li {
 		float:none;
@@ -129,28 +129,38 @@ ul#page-tabs {
 
 // select photos test stlying
 #pc_icon, #fb_icon {
-	
+	background-color: #aaa;
+	display: inline-block;
+	border-radius: 30px;
+	height: 60px;
+	width: 60px;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 #pc_icon {
-	background-color: #aaa;
-	display: inline-block;
-	border-radius: 20px;
-	height: 40px;
-	width: 40px;
-	background: url(../img/upload_pc.png) center center no-repeat;
+	background-image: url(../img/upload_pc.png);
+	background-size: 28px 25px;
+
+}
+
+#fb_icon {
+	background-image: url(../img/upload_fb.png);
 	background-size: 15px 22px;
 }
 
-// #fb_icon {
-// 	background-color: #aaa;
-// 	display: inline-block;
-// 	border-radius: 20px;
-// 	height: 40px;
-// 	width: 40px;
-// 	background: url(../img/upload_fb.png) center center no-repeat;
-// 	background-size: 15px 22px;
-// }
+#upload, #upload-facebookImg {
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 40px;
+}
+
+.caption-wrapper {
+	display: inline-block;
+	text-align: left;
+	margin-left: 10px;
+	
+}
 
 .drop-area{
   // border: 1px solid #999;
@@ -184,8 +194,34 @@ canvas{
 
 
 .thumbnail.selected {
-			background-color: #428bca;
+			background-color: $pink;
 		}
+
+// fb selector modal
+#facebook_photo_selector {
+	#fb-selector-header {
+		background-color: #f3f3f3;
+	}
+	h4 {
+		display: inline-block;
+		color: $grey;
+	}
+	label {
+		color: $grey;
+	}
+	select {
+		margin-right: 20px;
+		// -webkit-appearance:none;
+	 //    -moz-appearance:none;
+	 //    appearance:none;
+	    cursor:pointer;
+	    border: none;
+	    color: $grey;
+	    background: white;
+
+	}
+}
+
 // end of select photos testing
 
 // select video

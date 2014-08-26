@@ -49,7 +49,7 @@ define([
 					selectNext(currentSelectedStep);
 				}
 				
-	
+	 
 			});
 
 			function selectNext(id){
@@ -277,7 +277,7 @@ define([
 			{
 				FB.init({
 					appId      : '1454127581521662',
-					channelUrl : '//localhost.dev/home',
+					channelUrl : '//bca.dev/home',
 					status     : true,
 					xfbml      : false
 				});

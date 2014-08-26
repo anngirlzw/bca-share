@@ -148,3 +148,16 @@ $lang['fact-4-title'] =
 
 $lang['fact-4-content'] = 
 "Having one first-degree relative (mother, sister or daughter) with breast cancer doubles a woman's risk. Having two first-degree relatives increases her risk about three-fold.&sup1;";
+
+
+//starting from here are the new ones of share tab that are not shown on the live site!!
+//fb photo selector modal
+$lang['fb-selector-title'] = 
+"Album";
+
+$lang['fb-selector-subtitle'] = 
+"Select photos";
+
+$lang['fb-selector-add-btn'] = 
+"ADD PHOTOS";
+
