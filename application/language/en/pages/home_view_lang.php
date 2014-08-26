@@ -151,6 +151,37 @@ $lang['fact-4-content'] =
 
 
 //starting from here are the new ones of share tab that are not shown on the live site!!
+
+//step2
+$lang['add-photo-btn'] = 
+"ADD PHOTO";
+
+$lang['add-photo-btn-pc'] = 
+"From Your Computer";
+
+$lang['add-photo-btn-fb'] = 
+"From Facebook";
+
+//step3
+$lang['add-video-instruction'] = 
+"Personalize your story by adding a video from one of the following:";
+
+$lang['add-video-link-btn'] = 
+"ADD LINK";
+
+//final step (step4)
+$lang['preview-btn'] = 
+"PREVIEW";
+
+$lang['share-btn'] = 
+"SHARE";
+
+$lang['agree-policy1'] = 
+"I understand that by submitting my story, I am agreeing to the terms for posted content included in the Terms of Use .";
+
+$lang['agree-policy2'] = 
+"This is opt-in copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et dignissim est.";
+
 //fb photo selector modal
 $lang['fb-selector-title'] = 
 "Album";
@@ -160,4 +191,10 @@ $lang['fb-selector-subtitle'] =
 
 $lang['fb-selector-add-btn'] = 
 "ADD PHOTOS";
+
+//preview my story modal
+$lang['preview-title'] = 
+"Preview";
+
+
 

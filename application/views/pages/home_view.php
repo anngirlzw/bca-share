@@ -64,8 +64,8 @@
 								<div id="upload" class="drop-area">
 								<div id="pc_icon"></div>
 								<div  class="caption-wrapper">
-									<h4>ADD PHOTO</h4>
-								  	<h5>From Your Computer</h5>
+									<h4><? echo $this->langutil->line( "add-photo-btn" ); ?></h4>
+								  	<h5><? echo $this->langutil->line( "add-photo-btn-pc" ); ?></h5>
 								</div>									
 								  
 								</div>
@@ -74,8 +74,8 @@
 								<div id="upload-facebookImg" data-toggle="modal" href="#facebook_photo_selector">
 									<div id="fb_icon"></div>
 									<div class="caption-wrapper">
-										<h4>ADD PHOTO</h4>
-									  	<h5>From Facebook</h5>
+										<h4><? echo $this->langutil->line( "add-photo-btn" ); ?></h4>
+									  	<h5><? echo $this->langutil->line( "add-photo-btn-fb" ); ?></h5>
 									</div>	
 								</div>
 
@@ -101,7 +101,7 @@
 					  	<div class="col-xs-8 col-xs-offset-2" >
 						  	<div id="select-video">
 						  		<!-- content starts here -->
-						  		<p>Personalize your story by adding a video from one of the following:</p>
+						  		<p><? echo $this->langutil->line( "add-video-instruction" ); ?></p>
 						  		<div class="text-center">
 							  		<ul>
 							  			<li id="youtube"><img src="<?php echo base_url(); ?>img/youtube_icon.png"></li>
@@ -109,7 +109,7 @@
 							  			<li id="vimeo"><img src="<?php echo base_url(); ?>img/vimeo_icon.png"></li>
 							  		</ul>
 							  		<input type="text" id="video-link" placeholder="Add a link to your video...">
-							  		<a class="pink-button" id="addlink_btn">ADD LINK</a>
+							  		<a class="pink-button" id="addlink_btn"><? echo $this->langutil->line( "add-video-link-btn" ); ?></a>
 							  		<div id="video-msg"></div>
 							  		
 						  		</div>
@@ -141,15 +141,15 @@
 
 							  		</form>
 							  		<div class="btn-group-wrapper">
-								  		<a class="pink-button" id="pre_btn" data-toggle="modal" data-target="#previewModal">PREVIEW</a>
-								  		<a class="pink-button" id="share_btn">SHARE</a>
+								  		<a class="pink-button" id="pre_btn" data-toggle="modal" data-target="#previewModal"><? echo $this->langutil->line( "preview-btn" ); ?></a>
+								  		<a class="pink-button" id="share_btn"><? echo $this->langutil->line( "share-btn" ); ?></a>
 								  		<div id="submit-msg"></div>
 							  		</div>
 						  		</div>
 
 						  		<div id="agreement">
-							  		<label><input type="checkbox" name="agree">I understand that by submitting my story, I am agreeing to the terms for posted content included in the Terms of Use .</label><br>
-							  		<label><input type="checkbox" name="agree">This is opt-in copy. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et dignissim est.</label>
+							  		<label><input type="checkbox" name="agree"><? echo $this->langutil->line( "agree-policy1" ); ?></label><br>
+							  		<label><input type="checkbox" name="agree"><? echo $this->langutil->line( "agree-policy2" ); ?></label>
 						  		</div>
 						  	</div>
 						  	<!-- back & next btns -->
@@ -252,7 +252,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-	        <h4 class="modal-title" id="myModalLabel">PREVIEW MY STORY</h4>
+	        <h4 class="modal-title" id="myModalLabel"><? echo $this->langutil->line( "preview-title" ); ?></h4>
 	      </div>
 	      <div class="modal-body">
 	        <p><? echo $this->langutil->line( "sample_content" ); ?></p> 
