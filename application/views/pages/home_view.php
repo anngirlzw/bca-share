@@ -254,8 +254,25 @@
 	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	        <h4 class="modal-title" id="myModalLabel"><? echo $this->langutil->line( "preview-title" ); ?></h4>
 	      </div>
-	      <div class="modal-body">
-	        <p><? echo $this->langutil->line( "sample_content" ); ?></p> 
+	      <div class="modal-body" id="preview-container">
+
+	        <div class="preview-story-container">
+	        	<div class="prview-featuredImg-wrapper">
+	        		
+	        	</div>
+	        	<div class="prview-story-wrapper">
+	        		<h3> <span class="preview-story-username"></span> <? echo $this->langutil->line( "preview-story-title" ); ?></h3>
+	        		<div class="preview-story-content"></div>
+	        	</div>
+	        	
+	        </div>
+	        <div class="preview-video-container">
+	        	<h4><span class="preview-story-username"></span><? echo $this->langutil->line( "preview-video-title" ); ?></h4>
+	        	<iframe id="preview-video" style="display: none" width="100%" height="400px"></iframe>
+	        </div>
+	        <div class="preview-pictures-container">
+	        	<h4><span class="preview-story-username"></span><? echo $this->langutil->line( "preview-pictures-title" ); ?></h4>
+	        </div>
 	      </div>
 	    </div>
 	  </div>

@@ -196,5 +196,12 @@ $lang['fb-selector-add-btn'] =
 $lang['preview-title'] = 
 "Preview";
 
+$lang['preview-story-title'] = 
+"'s Story";
 
+$lang['preview-video-title'] = 
+"'s Video";
+
+$lang['preview-pictures-title'] = 
+"'s Pictures";
 

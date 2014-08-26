@@ -18,9 +18,7 @@ define([
 			});
 
 			this.$el.find('#pre_btn').click(function(){
-				$('#previewModal').modal({
-					show: false
-				})
+				$('#previewModal').modal();
 			});
 
 			// home carousel
@@ -42,6 +40,8 @@ define([
 					if (myStory && (jQuery.trim(myStory).length != 0)) {
 						$('#myStory-msg').html('');
 						selectNext(currentSelectedStep);
+						//put to preview modal
+						$('.preview-story-content').html(myStory);
 					} else {
 						$('#myStory-msg').html('please write your story before proceeding.');
 					}
@@ -213,11 +213,16 @@ define([
 				console.log(video_url);
 					if (ytVidId(video_url) !== false) {
 						var final_video_url = video_url.replace("watch?v=", "embed/");
+						//put to page preview
 						$('#video-display').attr('src', final_video_url + '?rel=0');
+						//put to preview modal
+						$('#preview-video').attr('src', final_video_url + '?rel=0');
+						//put to thumbnail
 						var video_thumb = document.getElementById("video-container");
 						closeThumbnail(video_thumb, 'video-close');
 
 						$('#video-display').fadeIn();
+						$('#preview-video').show();
 						$('#video-msg').html('');
 
 
@@ -245,17 +250,16 @@ define([
 			var checkedNum = $('#agreement :checkbox:checked').length == 2;
 			console.log(checkedNum);
 			if (username && (jQuery.trim(username).length != 0)) {
+				//put to preview modal
+				$('.preview-story-username').html(username);
+
 				var useremail = $('#useremail').val();
 				if (validateEmail(useremail) !== false) {
 					
 					if (checkedNum) {
 						$('#submit-msg').html('');
 						console.log('All information is valid! Ready to submit');
-						$('#pre_btn').click(function(){
-							$('#previewModal').modal({
-								show: true
-							});
-						});
+						
 
 					} else {
 						$('#submit-msg').html('Please check the boxes if you agree with the policies.');

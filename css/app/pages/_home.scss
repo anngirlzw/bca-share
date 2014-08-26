@@ -211,9 +211,6 @@ canvas{
 	}
 	select {
 		margin-right: 20px;
-		// -webkit-appearance:none;
-	 //    -moz-appearance:none;
-	 //    appearance:none;
 	    cursor:pointer;
 	    border: none;
 	    color: $grey;
@@ -222,7 +219,6 @@ canvas{
 	}
 }
 
-// end of select photos testing
 
 // select video
 #select-video {
@@ -351,6 +347,26 @@ input[type="checkbox"]:checked:after {
 	left: 2px;
 	color: $pink;
 }
+
+	//preview modal
+#preview-container {
+	color: $grey;
+
+	.preview-story-container, .preview-video-container, .preview-pictures-container {
+		margin-bottom: 30px;
+	}
+
+	.prview-story-wrapper, .prview-featuredImg-wrapper {
+		display: inline-block;
+
+		h3 {
+			color: $pink;
+		}
+
+
+	}
+}
+
 
 
 .arrow-white-l {
