@@ -169,10 +169,16 @@ ul#page-tabs {
   cursor:pointer;
   display: inline-block;
 }
+
+#thumbnail {
+	position: relative;
+}
+
 #thumbnail img{
-  width:100px;
-  height:100px;
+  width:200px;
+  height:200px;
   margin:20px;
+  // position: relative;
   
 }
 canvas{
@@ -188,14 +194,30 @@ canvas{
 	text-align: center;
 	color: white !important;
 	cursor: pointer;
-	margin-top: -100px;
+	margin-top: -200px;
 	margin-left: -35px;
+}
+
+.featured_photo_text {
+	position: absolute;
+	background: #aaa;
+	height: 40px;
+	width: 100px;
+	display: inline-block;
+	color: white !important;
+	left: 20px;
+	width: 200px;
+	top: 180px;
+	font-size: 16px;
+	padding-left: 10px;
+	padding-top: 5px;
+	
 }
 
 
 .thumbnail.selected {
 			background-color: $pink;
-		}
+}
 
 // fb selector modal
 #facebook_photo_selector {

@@ -82,7 +82,9 @@
 								<div class="thumb-container">
 								  
 								  <!-- image thumbnail -->
-								  <div id="thumbnail"></div>
+								  <div id="thumbnail">
+								  	<!-- <div class="featured_photo_text">Featured photo</div> -->
+								  </div>
 								</div>
 						  		
 						  		<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>

@@ -24,6 +24,8 @@ define([
 			// home carousel
 			this.$el.find('.home-carousel').carousel();
 
+			
+
 			//share
 			var currentSelectedStep;
 
@@ -107,6 +109,31 @@ define([
 					e.appendChild(cDiv);
 			}
 
+			//add Featured Photo layer
+			function addFeaturedPhoto() {
+				if ($('#thumbnail:has(img)').length) {
+					var oDiv = document.createElement('div');
+					oDiv.className = "featured_photo_text";
+					oDiv.innerHTML = "Featured Photo";
+							
+					if (($('.featured_photo_text')).length == false) {
+						$('#thumbnail').append(oDiv);
+					}
+							
+				} else {
+					if (($('.featured_photo_text')).length) {
+						$('.featured_photo_text').remove();
+					}					
+				}
+			}
+
+			function removeThumbnail(btn) {
+				$(btn).click(function(){					
+					$(this).prev().remove();
+					$(this).remove();
+					addFeaturedPhoto();
+				});
+			}
 
 
 			// upload images from computer
@@ -161,12 +188,9 @@ define([
 				    thumbnail.appendChild(image);
 				    closeThumbnail(thumbnail, 'thumb-close');
 
+					removeThumbnail('.thumb-close');
 
-				    $('.thumb-close').click(function(){
-						
-					    $(this).prev().remove();
-					    $(this).remove();
-					});
+				    addFeaturedPhoto();
 
 				    var reader = new FileReader()
 				    reader.onload = (function(aImg){
@@ -180,12 +204,17 @@ define([
 				    image.onload= function(){
 				      ctx.drawImage(image,100,100)
 				    }
+
+				    
 				  }
 				}
 
 				
+					
+				
 			
 			});//end of function test
+		
 
 		
 
@@ -304,6 +333,11 @@ define([
 					fbimg.setAttribute('src', 'https://graph.facebook.com/' + fpid + '/picture?type=normal&access_token=' + token);
 					var fbthumbnail = document.getElementById("thumbnail");
 					thumbnail.appendChild(fbimg);
+					closeThumbnail(thumbnail, 'thumb-close');
+
+					removeThumbnail('.thumb-close');
+					
+					addFeaturedPhoto();
 				}
 			});
 		});
