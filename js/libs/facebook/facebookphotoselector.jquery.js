@@ -153,7 +153,8 @@ var FacebookPhotoSelector =
 		fbscope       : 'user_photos',
 		photoColumns  : 4,
 		photosPerPage : 4 * 5,
-		selectLimit   : 1
+		selectLimit   : 1,
+		token         : ""
 	};
 
 	// Modal one-time initialization
@@ -164,6 +165,7 @@ var FacebookPhotoSelector =
 		{
 			var albumSelectBox = $(modal).find(settings.selectors.albums);
 			var photoList      = $(modal).find(settings.selectors.photos);
+
 
 			// Deselect any photos that were selected
 			photoList.find('a.selected').removeClass('selected');			
@@ -181,12 +183,17 @@ var FacebookPhotoSelector =
 			settings.onBeforeInit(modal);
 
 			// Facebook connect
+			
 			settings.fbsdk.getLoginStatus(function(response)
 			{
 				if (response.status === 'connected')
 				{
 					// Load the photo albums
 					FacebookPhotoSelector.loadAlbums(albumSelectBox, settings.onLoadAlbums);
+
+					//get user token
+					token = response.authResponse.accessToken;
+					console.log(token);
 				}
 				else
 				{

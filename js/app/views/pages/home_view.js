@@ -301,7 +301,7 @@ define([
 					fpid = photos[0];
 					console.log(fpid);
 					var fbimg = document.createElement("img");
-					fbimg.setAttribute('src', 'http://graph.facebook.com/' + fpid + '/picture');
+					fbimg.setAttribute('src', 'https://graph.facebook.com/' + fpid + '/picture?type=normal&access_token=' + token);
 					var fbthumbnail = document.getElementById("thumbnail");
 					thumbnail.appendChild(fbimg);
 				}
