@@ -378,14 +378,32 @@ input[type="checkbox"]:checked:after {
 		margin-bottom: 30px;
 	}
 
-	.prview-story-wrapper, .prview-featuredImg-wrapper {
+	.preview-story-wrapper, .preview-featuredImg-wrapper {
 		display: inline-block;
 
 		h3 {
 			color: $pink;
+			margin-top: 0;
 		}
 
+	}
 
+	.preview-featuredImg-wrapper {
+		img {
+			width: 200px;
+			
+		}
+
+		margin-right: 20px;
+		
+	}
+
+	.preview-pictures-wrapper {
+		img {
+			width: 200px;
+			height: 200px;
+			margin: 10px;
+		}
 	}
 }
 

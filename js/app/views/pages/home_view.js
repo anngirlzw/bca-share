@@ -135,6 +135,20 @@ define([
 				});
 			}
 
+			//preview btn click 
+			$('#pre_btn').click(function(){
+				if ($('#thumbnail>img:first-child').length) {
+					var featuredPhoto = document.querySelectorAll('#thumbnail>img:first-child');
+					$('.preview-featuredImg-wrapper').append(featuredPhoto);
+
+					$('#thumbnail>img').each(function(){
+						$(this).appendTo('.preview-pictures-wrapper');
+					});
+						
+					
+				}
+			});
+
 
 			// upload images from computer
 			jQuery(function($){

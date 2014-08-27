@@ -80,11 +80,8 @@
 								</div>
 
 								<div class="thumb-container">
-								  
 								  <!-- image thumbnail -->
-								  <div id="thumbnail">
-								  	<!-- <div class="featured_photo_text">Featured photo</div> -->
-								  </div>
+								  <div id="thumbnail"></div>
 								</div>
 						  		
 						  		<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
@@ -259,10 +256,10 @@
 	      <div class="modal-body" id="preview-container">
 
 	        <div class="preview-story-container">
-	        	<div class="prview-featuredImg-wrapper">
+	        	<div class="preview-featuredImg-wrapper">
 	        		
 	        	</div>
-	        	<div class="prview-story-wrapper">
+	        	<div class="preview-story-wrapper">
 	        		<h3> <span class="preview-story-username"></span> <? echo $this->langutil->line( "preview-story-title" ); ?></h3>
 	        		<div class="preview-story-content"></div>
 	        	</div>
@@ -274,6 +271,7 @@
 	        </div>
 	        <div class="preview-pictures-container">
 	        	<h4><span class="preview-story-username"></span><? echo $this->langutil->line( "preview-pictures-title" ); ?></h4>
+	        	<div class="preview-pictures-wrapper text-center"></div>
 	        </div>
 	      </div>
 	    </div>
