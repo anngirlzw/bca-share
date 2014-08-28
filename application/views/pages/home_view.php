@@ -46,7 +46,7 @@
 						  	<div id="tell-us">
 						  		<p><? echo $this->langutil->line( "tell_us" ); ?><span><? echo $this->langutil->line( "tell_us_max" ); ?></span></p>
 						  		<textarea placeholder="<? echo $this->langutil->line( "textarea_placeholder" ); ?>" id="word_count"></textarea>
-						  		<div id="count-container">Words left: <span id="word_left">200</span></div>
+						  		<div id="count-container"><? echo $this->langutil->line( "word-left" ); ?><span id="word_left"><? echo $this->langutil->line( "num-remain" ); ?></span></div>
 						  		<div id="myStory-msg"></div>
 						  		<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
 						  	</div>
@@ -145,7 +145,7 @@
 
 							  		</form>
 							  		<div class="btn-group-wrapper">
-								  		<a class="pink-button" id="pre_btn" data-toggle="modal" data-target="#previewModal"><? echo $this->langutil->line( "preview-btn" ); ?></a>
+								  		<a class="pink-button" id="pre_btn" data-target="#previewModal"><? echo $this->langutil->line( "preview-btn" ); ?></a>
 								  		<a class="pink-button" id="share_btn"><? echo $this->langutil->line( "share-btn" ); ?></a>
 								  		<div id="submit-msg"></div>
 							  		</div>
@@ -255,7 +255,7 @@
 	<div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
-	      <div class="modal-header">
+	      <div class="modal-header" id="preview-story-header">
 	        <button type="button" class="close" data-dismiss="modal" id="preview-close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	        <h4 class="modal-title" id="myModalLabel"><? echo $this->langutil->line( "preview-title" ); ?></h4>
 	      </div>

@@ -151,6 +151,12 @@ $lang['fact-4-content'] =
 
 
 //starting from here are the new ones of share tab that are not shown on the live site!!
+//step1
+$lang['word-left'] = 
+"Words left: ";
+
+$lang['num-remain'] = 
+"200";
 
 //step2
 $lang['add-photo-btn'] = 

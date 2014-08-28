@@ -376,6 +376,11 @@ input[type="checkbox"]:checked:after {
 }
 
 	//****** Preview Modal ******
+#preview-story-header {
+	background: #f3f3f3;
+	color: $grey;
+}
+
 #preview-container {
 	color: $grey;
 
@@ -390,6 +395,11 @@ input[type="checkbox"]:checked:after {
 		h3 {
 			color: $pink;
 			margin-top: 0;
+			font-size: 30px;
+		}
+
+		h4 {
+			font-size: 16px;
 		}
 
 	}

@@ -19,12 +19,6 @@ define([
 				});
 			});
 
-			this.$el.find('#pre_btn').click(function(){
-				$('#previewModal').modal({
-					backdrop: 'static'
-				});
-			});
-
 			// home carousel
 			this.$el.find('.home-carousel').carousel();
 
@@ -57,7 +51,6 @@ define([
 		 	
 
 			var currentSelectedStep;
-
 
 			//go to next page function
 			this.$el.find(".next-btn").click(function(e){
@@ -182,17 +175,47 @@ define([
 				});
 			}
 
+			var counter;
+			//check everything before preview/share
+			function submitCheck() {
+				counter = 0;
+				var username = $('#username').val();
+				var checkedNum = $('#agreement :checkbox:checked').length == 2;
+
+				if (username && (jQuery.trim(username).length != 0)) {
+					//put to preview modal
+					$('.preview-story-username').html(username);
+
+					var useremail = $('#useremail').val();
+					if (validateEmail(useremail) !== false) {
+						
+						if (checkedNum) {
+							$('#submit-msg').html('');
+							console.log('All information is valid! Ready to submit');
+							counter = 1;
+
+						} else {
+							$('#submit-msg').html('Please check the boxes if you agree with the policies.');
+						}
+						
+					} else {
+						$('#submit-msg').html('Please enter your email address.');
+					}
+					
+				} else {
+					$('#submit-msg').html('Please enter your name.');
+				}
+			}
+
 			//preview btn click 
 			$('#pre_btn').click(function(){
+				submitCheck();
+				if (counter == 1) {
 
-					if ($('#thumbnail:has(img)').length) {
-					
-						$('#thumbnail').find('img').first().clone().appendTo('.preview-featuredImg-wrapper');
-
-						$('#thumbnail>img').slice(1).each(function(){
-							$(this).clone().appendTo('.preview-pictures-wrapper');
-						});
-					}
+					$('#thumbnail').find('img').first().clone().appendTo('.preview-featuredImg-wrapper');
+					$('#thumbnail>img').slice(1).each(function(){
+						$(this).clone().appendTo('.preview-pictures-wrapper');
+					});
 
 					if ($('#video-display').css('display') != 'none') {
 						$('.preview-video-container>h4').show();
@@ -205,6 +228,13 @@ define([
 					} else {
 						$('.preview-pictures-container>h4').hide();
 					}
+
+					$('#previewModal').modal({
+						backdrop: 'static'
+					});
+
+				}
+
 			});
 
 			$('#preview-close').click(function(){
@@ -253,8 +283,8 @@ define([
 				    var file = files[i]
 				    var imageType = /image.*/
 				    if(!file.type.match(imageType)){
-				      console.log("Not an Image");
-				      continue;
+				    	$('#myPhoto-msg').html('The file you upload is not an Image.')
+				     	continue;
 				    }
 
 				    var image = document.createElement("img");
@@ -337,33 +367,8 @@ define([
 		});
 
 		//validate user input
-		this.$el.find('#share_btn, #pre_btn').click(function(){
-			var username = $('#username').val();
-			var checkedNum = $('#agreement :checkbox:checked').length == 2;
-
-			if (username && (jQuery.trim(username).length != 0)) {
-				//put to preview modal
-				$('.preview-story-username').html(username);
-
-				var useremail = $('#useremail').val();
-				if (validateEmail(useremail) !== false) {
-					
-					if (checkedNum) {
-						$('#submit-msg').html('');
-						console.log('All information is valid! Ready to submit');
-						
-
-					} else {
-						$('#submit-msg').html('Please check the boxes if you agree with the policies.');
-					}
-					
-				} else {
-					$('#submit-msg').html('Please enter your email address.');
-				}
-				
-			} else {
-				$('#submit-msg').html('Please enter your name.');
-			}
+		this.$el.find('#share_btn').click(function(){
+			submitCheck();
 		});
 
 		// facebook photo selector function
