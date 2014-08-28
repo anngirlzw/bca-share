@@ -45,7 +45,8 @@
 					  	<div class="col-xs-8 col-xs-offset-2" >
 						  	<div id="tell-us">
 						  		<p><? echo $this->langutil->line( "tell_us" ); ?><span><? echo $this->langutil->line( "tell_us_max" ); ?></span></p>
-						  		<textarea placeholder="<? echo $this->langutil->line( "textarea_placeholder" ); ?>"></textarea>
+						  		<textarea placeholder="<? echo $this->langutil->line( "textarea_placeholder" ); ?>" id="word_count"></textarea>
+						  		<div id="count-container">Words left: <span id="word_left">200</span></div>
 						  		<div id="myStory-msg"></div>
 						  		<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
 						  	</div>

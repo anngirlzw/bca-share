@@ -30,7 +30,33 @@ define([
 
 			
 
-			//share
+			//****** share *****
+
+			//step1 input word count
+			
+		    this.$el.find("#word_count").on('keyup', function() {
+
+		    	if (($("#word_count").val()) && (jQuery.trim($("#word_count").val()).length != 0)) {
+		    		$('#myStory-msg').html('');
+		    		
+		    		var words = this.value.match(/\S+/g).length;
+				    if (words > 200) {
+				        // Split the string on first 200 words and rejoin on spaces
+				        var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+				        // Add a space at the end to keep new typing making new words
+				        $(this).val(trimmed + " ");
+				    }
+				    else {
+				        $('#word_left').text(200-words);
+				    }
+		    		
+		    	} else {
+		    		$('#word_left').text('200');
+		    	}
+			    
+		    });
+		 	
+
 			var currentSelectedStep;
 
 
@@ -50,6 +76,7 @@ define([
 						$('.preview-story-content').html(myStory);
 					} else {
 						$('#myStory-msg').html('Please write your story before proceeding.');
+						// $('#count-container').hide();
 					}
 				} else {
 					selectNext(currentSelectedStep);
