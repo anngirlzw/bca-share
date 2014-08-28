@@ -1,8 +1,10 @@
 /*-------- Home Page Styles ----------*/
-.pink-button {
+
+.pink-button { //********** Newly added!!! *********
 	white-space: nowrap !important;
 	padding: 7px 30px !important;
-}
+} 
+
 /*-------- Home Page Tabs Styling ----------*/
 
 #home-page-header{
@@ -91,7 +93,6 @@ ul#page-tabs {
 
 .carousel-indicators li {
   background-color: $grey;
-  // background-color: rgba(70,70,70,.25);
 }
 
 .carousel-indicators .active {
@@ -127,7 +128,7 @@ ul#page-tabs {
 }
 
 
-// select photos test stlying
+// ********** Step2: Select photos **********
 #pc_icon, #fb_icon {
 	background-color: #aaa;
 	display: inline-block;
@@ -177,10 +178,9 @@ ul#page-tabs {
 #thumbnail img{
   width:200px;
   height:200px;
-  margin:20px;
-  // position: relative;
-  
+  margin:20px;  
 }
+
 canvas{
   border:1px solid red;
 }
@@ -219,7 +219,7 @@ canvas{
 			background-color: $pink;
 }
 
-// fb selector modal
+// ****** FB Selector Modal ******
 #facebook_photo_selector {
 	#fb-selector-header {
 		background-color: #f3f3f3;
@@ -242,7 +242,7 @@ canvas{
 }
 
 
-// select video
+// ********** Step3: Select video **********
 #select-video {
 	ul {
 		display: inline-block;
@@ -315,7 +315,7 @@ canvas{
 	
 }
 
-// Final step
+// ********** Step4 (final): Preview & Share **********
 #final-step {
 
 	#user-info, #agreement {
@@ -370,7 +370,7 @@ input[type="checkbox"]:checked:after {
 	color: $pink;
 }
 
-	//preview modal
+	//****** Preview Modal ******
 #preview-container {
 	color: $grey;
 
@@ -378,8 +378,9 @@ input[type="checkbox"]:checked:after {
 		margin-bottom: 30px;
 	}
 
-	.preview-story-wrapper, .preview-featuredImg-wrapper {
+	.preview-story-wrapper {
 		display: inline-block;
+		max-width: 340px;
 
 		h3 {
 			color: $pink;
@@ -389,11 +390,12 @@ input[type="checkbox"]:checked:after {
 	}
 
 	.preview-featuredImg-wrapper {
+
 		img {
 			width: 200px;
 			
 		}
-
+		display: inline-block;
 		margin-right: 20px;
 		
 	}
@@ -658,6 +660,7 @@ input[type="checkbox"]:checked:after {
 	}
 }
 
+// ************NEW***************
 @media (max-width: 882px) {
 	#agreement {
 		width: auto !important;

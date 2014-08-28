@@ -26,6 +26,8 @@
 			  	</div>
 			  </div>
 
+			  <!-- ***********ALL "SHARE YOUR STORY" CONTENT START HERE*********** -->
+
 			  <!-- Share -->
 			  <div class="tab-pane" id="share">
 
@@ -37,7 +39,7 @@
 				  	<div class="checkboxes" id="checkbox-step4"><img src="<?php echo base_url(); ?>img/unchecked_box.png" class="img-responsive"><span><? echo $this->langutil->line( "share_step4" ); ?></span></div>
 			  	</div>
 
-			  	<!-- Share Step1 - your story -->
+			  	<!-- *** Share Step1 - your story *** -->
 			  	
 				  	<div class="col-xs-12 container-fluid share-steps step-active" id="share-step1">
 					  	<div class="col-xs-8 col-xs-offset-2" >
@@ -52,7 +54,7 @@
 				  	</div>
 			  	
 
-			  	<!-- Share Step2 - add photos -->
+			  	<!-- *** Share Step2 - add photos *** -->
 			  	
 				  	<div class="col-xs-12 container-fluid share-steps" id="share-step2">
 					  	<div class="col-xs-8 col-xs-offset-2" >
@@ -94,7 +96,7 @@
 				  	</div>
 			  	
 
-			  	<!-- Share Step3 - add videos -->
+			  	<!-- *** Share Step3 - add videos *** -->
 			  	
 				  	<div class="col-xs-12 container-fluid share-steps" id="share-step3">
 					  	<div class="col-xs-8 col-xs-offset-2" >
@@ -124,11 +126,9 @@
 					  		<a class="pink-button pull-right next-btn" id="nextbtn-step3"><? echo $this->langutil->line( "next_btn" ); ?>&nbsp;&nbsp;<span class="arrow-white-r"></span></a>
 					  	</div>
 				  	</div>
-
-
 			  	
 
-			  	<!-- Share Step4 - share -->
+			  	<!-- *** Share Step4 - share *** -->
 			  	
 				  	<div class="col-xs-12 container-fluid share-steps" id="share-step4">
 					  	<div class="col-xs-8 col-xs-offset-2" >
@@ -159,6 +159,7 @@
 
 				</div>
 			  
+			  <!-- ***********ALL "SHARE YOUR STORY" CONTENT END HERE*********** -->
 
 			  <!-- Donate -->
 			  <div class="tab-pane" id="donate">
@@ -250,7 +251,7 @@
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <button type="button" class="close" data-dismiss="modal" id="preview-close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	        <h4 class="modal-title" id="myModalLabel"><? echo $this->langutil->line( "preview-title" ); ?></h4>
 	      </div>
 	      <div class="modal-body" id="preview-container">
@@ -271,7 +272,7 @@
 	        </div>
 	        <div class="preview-pictures-container">
 	        	<h4><span class="preview-story-username"></span><? echo $this->langutil->line( "preview-pictures-title" ); ?></h4>
-	        	<div class="preview-pictures-wrapper text-center"></div>
+	        	<div class="preview-pictures-wrapper"></div>
 	        </div>
 	      </div>
 	    </div>
@@ -341,8 +342,7 @@
 
 
 
-
-
-<!-- Facebook SDK -->
+<!-- Newly added!! -->
+<!-- *** Facebook SDK ***-->
 	<div id="fb-root"></div>
 

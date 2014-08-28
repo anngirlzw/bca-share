@@ -14,11 +14,15 @@ define([
 			})
 
 			this.$el.find('.view-sample').click(function(){
-				$('#viewSampleModal').modal();
+				$('#viewSampleModal').modal({
+					backdrop: 'static'
+				});
 			});
 
 			this.$el.find('#pre_btn').click(function(){
-				$('#previewModal').modal();
+				$('#previewModal').modal({
+					backdrop: 'static'
+				});
 			});
 
 			// home carousel
@@ -45,7 +49,7 @@ define([
 						//put to preview modal
 						$('.preview-story-content').html(myStory);
 					} else {
-						$('#myStory-msg').html('please write your story before proceeding.');
+						$('#myStory-msg').html('Please write your story before proceeding.');
 					}
 				} else {
 					selectNext(currentSelectedStep);
@@ -101,7 +105,7 @@ define([
 				});
 			}
 
-			//close thumbnail
+			//add 'close thumbnail' btn each time a new photo is added
 			function closeThumbnail(e,classname) {
 				var cDiv = document.createElement('div');
 					cDiv.className = classname;
@@ -127,6 +131,7 @@ define([
 				}
 			}
 
+			//remove photo thumbnail onclick
 			function removeThumbnail(btn) {
 				$(btn).click(function(){					
 					$(this).prev().remove();
@@ -137,16 +142,31 @@ define([
 
 			//preview btn click 
 			$('#pre_btn').click(function(){
-				if ($('#thumbnail>img:first-child').length) {
-					var featuredPhoto = document.querySelectorAll('#thumbnail>img:first-child');
-					$('.preview-featuredImg-wrapper').append(featuredPhoto);
 
-					$('#thumbnail>img').each(function(){
-						$(this).appendTo('.preview-pictures-wrapper');
-					});
-						
+					if ($('#thumbnail:has(img)').length) {
 					
-				}
+						$('#thumbnail').find('img').first().clone().appendTo('.preview-featuredImg-wrapper');
+
+						$('#thumbnail>img').slice(1).each(function(){
+							$(this).clone().appendTo('.preview-pictures-wrapper');
+						});
+					}
+
+					if ($('#preview-video').is(":visible")) {
+						$('.preview-video-container>h4').show();
+					} else {
+						$('.preview-video-container>h4').hide();
+					}
+
+					if ($('#thumbnail:has(img)').length) {
+						$('.preview-pictures-container>h4').show();
+					} else {
+						$('.preview-pictures-container>h4').hide();
+					}
+			});
+
+			$('#preview-close').click(function(){
+				$('#previewModal').find('img').remove();
 			});
 
 
@@ -196,7 +216,6 @@ define([
 				    }
 
 				    var image = document.createElement("img");
-				    // image.classList.add("")
 				    var thumbnail = document.getElementById("thumbnail");
 				    image.file = file;
 				    thumbnail.appendChild(image);
@@ -223,16 +242,9 @@ define([
 				  }
 				}
 
-				
-					
-				
-			
-			});//end of function test
-		
 
+			});//end of function
 		
-
-		// display video on the website
 
 		// youtube url validation
 		function ytVidId(url) {
@@ -245,15 +257,14 @@ define([
 			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			return re.test(email);
 		}
-
 		
 		//display video on the page
 		this.$el.find('#addlink_btn').click(function(){
-			console.log('click works');
+
 			if ($('#video-link').val()) {				
 				var video_url;
 				video_url = $('#video-link').val();
-				console.log(video_url);
+
 					if (ytVidId(video_url) !== false) {
 						var final_video_url = video_url.replace("watch?v=", "embed/");
 						//put to page preview
@@ -268,22 +279,17 @@ define([
 						$('#preview-video').show();
 						$('#video-msg').html('');
 
-
-					    $('.video-close').click(function(){
-							
+					    $('.video-close').click(function(){							
 						    $(this).prev().css('display', 'none');
 						    $(this).remove();
 						});
 
 					} else {
-						$('#video-msg').html('your youtube link is not valid');
-						console.log('your youtube link is not valid');
+						$('#video-msg').html('Your youtube link is not valid.');
 					}
-
 				
 			} else {
-				console.log('please enter a link');
-				$('#video-msg').html('please enter a link');
+				$('#video-msg').html('Please enter a link.');
 			}
 		});
 
@@ -291,7 +297,7 @@ define([
 		this.$el.find('#share_btn, #pre_btn').click(function(){
 			var username = $('#username').val();
 			var checkedNum = $('#agreement :checkbox:checked').length == 2;
-			console.log(checkedNum);
+
 			if (username && (jQuery.trim(username).length != 0)) {
 				//put to preview modal
 				$('.preview-story-username').html(username);
@@ -317,7 +323,7 @@ define([
 			}
 		});
 
-			// facebook photo selector function
+		// facebook photo selector function
 		$(function()
 		{
 			$.getScript('http://connect.facebook.net/en_US/all.js', function()
@@ -339,10 +345,9 @@ define([
 
 			$('#facebook_photo_selector').facebookPhotoSelector({
 				onFinalSelect : function(photos)
-				{
-					console.log(photos);
+				{				
 					fpid = photos[0];
-					console.log(fpid);
+					// console.log(fpid);
 					var fbimg = document.createElement("img");
 					fbimg.setAttribute('src', 'https://graph.facebook.com/' + fpid + '/picture?type=normal&access_token=' + token);
 					var fbthumbnail = document.getElementById("thumbnail");
@@ -365,6 +370,10 @@ define([
 			this.$el.find('.back-btn').unbind();
 			this.$el.find('.share-steps').unbind();
 			this.$el.find('.checkboxes').unbind();
+			//new ones
+			this.$el.find('#share_btn, #pre_btn').unbind();
+			this.$el.find('#addlink_btn').unbind();
+
 
 		}
 	});	
