@@ -169,6 +169,9 @@ $lang['add-video-instruction'] =
 $lang['add-video-link-btn'] = 
 "ADD LINK";
 
+$lang['skip_btn'] = 
+"SKIP THIS STEP";
+
 //final step (step4)
 $lang['preview-btn'] = 
 "PREVIEW";

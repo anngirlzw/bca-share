@@ -86,7 +86,7 @@
 								  <!-- image thumbnail -->
 								  <div id="thumbnail"></div>
 								</div>
-						  		
+						  		<div id="myPhoto-msg"></div>
 						  		<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
 						  	</div>
 
@@ -122,9 +122,13 @@
 
 						  	</div>
 
-						  	<!-- back & next btns -->
+						  	<!-- back & skip & next btns -->
 						  	<a class="pink-button pull-left back-btn" id="backbtn-step3"><span class="arrow-white-l"></span>&nbsp;&nbsp;<? echo $this->langutil->line( "back_btn" ); ?></a>
-					  		<a class="pink-button pull-right next-btn" id="nextbtn-step3"><? echo $this->langutil->line( "next_btn" ); ?>&nbsp;&nbsp;<span class="arrow-white-r"></span></a>
+						  	<div class="skip-btn-wrapper pull-right">
+						  		<a class="pink-button next-btn pull-right" id="nextbtn-step3"><? echo $this->langutil->line( "next_btn" ); ?>&nbsp;&nbsp;<span class="arrow-white-r"></span></a>
+						  		<a class="pink-button skip-btn pull-right" style="margin-right: 20px"><? echo $this->langutil->line( "skip_btn" ); ?></a>
+					  			
+						  	</div>
 					  	</div>
 				  	</div>
 			  	

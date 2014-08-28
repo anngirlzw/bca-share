@@ -32,8 +32,7 @@ define([
 
 			//****** share *****
 
-			//step1 input word count
-			
+			//step1 input word count			
 		    this.$el.find("#word_count").on('keyup', function() {
 
 		    	if (($("#word_count").val()) && (jQuery.trim($("#word_count").val()).length != 0)) {
@@ -76,7 +75,13 @@ define([
 						$('.preview-story-content').html(myStory);
 					} else {
 						$('#myStory-msg').html('Please write your story before proceeding.');
-						// $('#count-container').hide();
+					}
+				} else if (currentSelectedStep == 2) {
+					if ($('#thumbnail:has(img)').length) {
+						selectNext(currentSelectedStep);
+						$('#myPhoto-msg').html('');
+					} else {
+						$('#myPhoto-msg').html('Please upload a photo before proceeding.');
 					}
 				} else {
 					selectNext(currentSelectedStep);
@@ -132,6 +137,15 @@ define([
 				});
 			}
 
+			//skip btn onclick
+			this.$el.find(".skip-btn").click(function(){
+				$('#share-step3').removeClass('step-active');
+				$('#share-step4').addClass('step-active');
+				$('.video-close').remove();						
+				$('#preview-video, #video-display').css('display', 'none');
+				$('#preview-video, #video-display').attr('src', '');  						
+			});
+
 			//add 'close thumbnail' btn each time a new photo is added
 			function closeThumbnail(e,classname) {
 				var cDiv = document.createElement('div');
@@ -143,6 +157,7 @@ define([
 			//add Featured Photo layer
 			function addFeaturedPhoto() {
 				if ($('#thumbnail:has(img)').length) {
+					$('#myPhoto-msg').html('');
 					var oDiv = document.createElement('div');
 					oDiv.className = "featured_photo_text";
 					oDiv.innerHTML = "Featured Photo";
@@ -179,7 +194,7 @@ define([
 						});
 					}
 
-					if ($('#preview-video').is(":visible")) {
+					if ($('#video-display').css('display') != 'none') {
 						$('.preview-video-container>h4').show();
 					} else {
 						$('.preview-video-container>h4').hide();
@@ -294,11 +309,9 @@ define([
 
 					if (ytVidId(video_url) !== false) {
 						var final_video_url = video_url.replace("watch?v=", "embed/");
-						//put to page preview
-						$('#video-display').attr('src', final_video_url + '?rel=0');
-						//put to preview modal
-						$('#preview-video').attr('src', final_video_url + '?rel=0');
-						//put to thumbnail
+						//put to thumbnail & preview modal
+						$('#video-display, #preview-video').attr('src', final_video_url + '?rel=0');
+						
 						var video_thumb = document.getElementById("video-container");
 						closeThumbnail(video_thumb, 'video-close');
 
@@ -307,9 +320,12 @@ define([
 						$('#video-msg').html('');
 
 					    $('.video-close').click(function(){							
-						    $(this).prev().css('display', 'none');
+						    $('#preview-video, #video-display').css('display', 'none');
+						    $('#preview-video, #video-display').attr('src', '');
 						    $(this).remove();
 						});
+
+						$('#video-link').val('');
 
 					} else {
 						$('#video-msg').html('Your youtube link is not valid.');
@@ -400,6 +416,7 @@ define([
 			//new ones
 			this.$el.find('#share_btn, #pre_btn').unbind();
 			this.$el.find('#addlink_btn').unbind();
+			this.$el.find(".skip-btn").unbind();
 
 
 		}
