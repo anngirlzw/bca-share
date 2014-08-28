@@ -108,6 +108,10 @@ ul#page-tabs {
 	min-height: 447px;
 	position: relative;
 
+	.view-sample-wrapper {
+		margin-top: 50px;
+	}
+
 	.view-sample {
 		color: $pink;
 		font-size: 16px;
@@ -159,6 +163,10 @@ ul#page-tabs {
 	display: inline-block;
 	cursor: pointer;
 	margin-right: 40px;
+}
+
+#upload-facebookImg {
+	padding: 10px;
 }
 
 .caption-wrapper {
@@ -681,4 +689,9 @@ input[type="checkbox"]:checked:after {
 		width: auto !important;
 	}
 
-	}
+}
+
+@media (max-width: 640px) {
+	//step 3 btns responsive
+
+}

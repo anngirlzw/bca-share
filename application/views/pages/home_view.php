@@ -48,7 +48,9 @@
 						  		<textarea placeholder="<? echo $this->langutil->line( "textarea_placeholder" ); ?>" id="word_count"></textarea>
 						  		<div id="count-container"><? echo $this->langutil->line( "word-left" ); ?><span id="word_left"><? echo $this->langutil->line( "num-remain" ); ?></span></div>
 						  		<div id="myStory-msg"></div>
-						  		<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
+						  		<div class="view-sample-wrapper">
+						  			<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
+						  		</div>
 						  	</div>
 					  		<a class="pink-button pull-right next-btn" id="nextbtn-step1"><? echo $this->langutil->line( "next_btn" ); ?>&nbsp;&nbsp;<span class="arrow-white-r"></span></a>
 					  	</div>
@@ -87,7 +89,9 @@
 								  <div id="thumbnail"></div>
 								</div>
 						  		<div id="myPhoto-msg"></div>
-						  		<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
+						  		<div class="view-sample-wrapper">
+						  			<div class="view-sample pull-right" data-toggle="modal" data-target="#viewSampleModal"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
+						  		</div>
 						  	</div>
 
 						  	<!-- back & next btns -->
@@ -116,9 +120,11 @@
 							  		
 						  		</div>
 						  		<div id="video-container">
-						  			<iframe id="video-display" style="display: none" width="380" height="180"></iframe>
+						  			<iframe id="video-display" style="display: none" width="350" height="220"></iframe>
 						  		</div>
-						  		<div class="view-sample pull-right"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
+						  		<div class="view-sample-wrapper">
+						  			<div class="view-sample pull-right"><? echo $this->langutil->line( "view_sample" ); ?>&nbsp;&nbsp;<span class="arrow-right"></span></div>
+						  		</div>
 
 						  	</div>
 
