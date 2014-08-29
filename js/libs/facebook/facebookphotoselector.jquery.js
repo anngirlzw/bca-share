@@ -193,7 +193,7 @@ var FacebookPhotoSelector =
 
 					//get user token
 					token = response.authResponse.accessToken;
-					console.log(token);
+					
 				}
 				else
 				{

@@ -6,6 +6,7 @@ define([
 		template: _.template( HomeViewTemplate ),
 		id:"home",
 		ready:function(){
+
 			var _t = this;
 			
 			this.$el.find('#myTab a').click(function (e) {
