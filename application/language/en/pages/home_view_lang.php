@@ -52,7 +52,7 @@ $lang['sample_content'] =
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at sapien at dui imperdiet fringilla id et sapien. Cras tincidunt lobortis ligula, sed convallis est dapibus eget. Aenean quis nisl lobortis, bibendum turpis sit amet, tristique tellus. Morbi facilisis enim enim, eget sodales nunc mollis nec. Aliquam tincidunt lobortis ligula, et commodo velit pretium a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at lacus sed tellus tempor tempor. Vivamus quis lectus vulputate, tristique neque in, hendrerit quam. Pellentesque nec dui auctor, volutpat nisl sit amet, hendrerit lectus. Duis commodo luctus massa, sit amet gravida massa. Cras at aliquet elit. Aliquam vel magna magna. Phasellus sollicitudin, lacus vitae luctus porta, augue orci laoreet nibh, at luctus diam quam at ipsum.";
 
 $lang['select_photo'] = 
-"Please select up to 4 photos from your desktop, or by connecting to Facebook. Once photos are uploaded, you can choose your featured photo, and click and drag to re-order. You will be able to preview your story before sharing.";
+"Please select up to 4 photos from your desktop (You can click or drag a photo onto the computer icon to upload), or by connecting to Facebook. The first uploaded will be your featured photo. You will be able to preview your story before sharing.";
 
 $lang['donate_content'] = 
 "The Estée Lauder Companies’ Breast Cancer Awareness (BCA) Campaign is proud to support The Breast Cancer Research Foundation&reg (BCRF), which was founded in 1992 by Mrs. Evelyn H. Lauder. A donation made through www.BCAcampaign.com goes directly to BCRF and helps accelerate the most promising breast cancer research worldwide that will lead to prevention and a cure in our lifetime.

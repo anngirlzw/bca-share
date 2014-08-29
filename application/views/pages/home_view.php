@@ -33,10 +33,10 @@
 
 			  	<!-- checked & unchecked -->
 			  	<div class="col-xs-12 steps text-center">
-				  	<div class="checkboxes" id="checkbox-step1"><img src="<?php echo base_url(); ?>img/checked_box.png" class="img-responsive"><span><? echo $this->langutil->line( "share_step1" ); ?></span></div>
-				  	<div class="checkboxes" id="checkbox-step2"><img src="<?php echo base_url(); ?>img/unchecked_box.png" class="img-responsive"><span><? echo $this->langutil->line( "share_step2" ); ?></span></div>
-				  	<div class="checkboxes" id="checkbox-step3"><img src="<?php echo base_url(); ?>img/unchecked_box.png" class="img-responsive"><span><? echo $this->langutil->line( "share_step3" ); ?></span></div>
-				  	<div class="checkboxes" id="checkbox-step4"><img src="<?php echo base_url(); ?>img/unchecked_box.png" class="img-responsive"><span><? echo $this->langutil->line( "share_step4" ); ?></span></div>
+				  	<div class="checkboxes" id="checkbox-step1"><img src="<?php echo base_url(); ?>img/checked_box.png" ><span><? echo $this->langutil->line( "share_step1" ); ?></span></div>
+				  	<div class="checkboxes" id="checkbox-step2"><img src="<?php echo base_url(); ?>img/unchecked_box.png" ><span><? echo $this->langutil->line( "share_step2" ); ?></span></div>
+				  	<div class="checkboxes" id="checkbox-step3"><img src="<?php echo base_url(); ?>img/unchecked_box.png" ><span><? echo $this->langutil->line( "share_step3" ); ?></span></div>
+				  	<div class="checkboxes" id="checkbox-step4"><img src="<?php echo base_url(); ?>img/unchecked_box.png" ><span><? echo $this->langutil->line( "share_step4" ); ?></span></div>
 			  	</div>
 
 			  	<!-- *** Share Step1 - your story *** -->
@@ -129,10 +129,12 @@
 						  	</div>
 
 						  	<!-- back & skip & next btns -->
-						  	<a class="pink-button pull-left back-btn" id="backbtn-step3"><span class="arrow-white-l"></span>&nbsp;&nbsp;<? echo $this->langutil->line( "back_btn" ); ?></a>
-						  	<div class="skip-btn-wrapper pull-right">
-						  		<a class="pink-button next-btn pull-right" id="nextbtn-step3"><? echo $this->langutil->line( "next_btn" ); ?>&nbsp;&nbsp;<span class="arrow-white-r"></span></a>
-						  		<a class="pink-button skip-btn pull-right" style="margin-right: 20px"><? echo $this->langutil->line( "skip_btn" ); ?></a>
+						  	<div class="back-btn-wrapper">
+						  		<a class="pink-button back-btn" id="backbtn-step3"><span class="arrow-white-l"></span>&nbsp;&nbsp;<? echo $this->langutil->line( "back_btn" ); ?></a>
+						  	</div>
+						  	<div class="skip-btn-wrapper">
+						  		<a class="pink-button next-btn" id="nextbtn-step3"><? echo $this->langutil->line( "next_btn" ); ?>&nbsp;&nbsp;<span class="arrow-white-r"></span></a>
+						  		<a class="pink-button skip-btn" style="margin-right: 20px"><? echo $this->langutil->line( "skip_btn" ); ?></a>
 					  			
 						  	</div>
 					  	</div>

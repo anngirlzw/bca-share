@@ -71,8 +71,12 @@ define([
 					}
 				} else if (currentSelectedStep == 2) {
 					if ($('#thumbnail:has(img)').length) {
-						selectNext(currentSelectedStep);
-						$('#myPhoto-msg').html('');
+						if ($('#thumbnail>img').length > 4) {
+							$('#myPhoto-msg').html('The number of photos exceeds maximum. Please select up to 4 photos.');
+						} else {
+							selectNext(currentSelectedStep);
+							$('#myPhoto-msg').html('');
+						}						
 					} else {
 						$('#myPhoto-msg').html('Please upload a photo before proceeding.');
 					}
@@ -223,7 +227,7 @@ define([
 						$('.preview-video-container>h4').hide();
 					}
 
-					if ($('#thumbnail:has(img)').length) {
+					if ($('#thumbnail>img').slice(1).length > 0) {
 						$('.preview-pictures-container>h4').show();
 					} else {
 						$('.preview-pictures-container>h4').hide();
@@ -291,6 +295,7 @@ define([
 				    var thumbnail = document.getElementById("thumbnail");
 				    image.file = file;
 				    thumbnail.appendChild(image);
+
 				    closeThumbnail(thumbnail, 'thumb-close');
 
 					removeThumbnail('.thumb-close');

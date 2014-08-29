@@ -51,7 +51,7 @@ ul#page-tabs {
 
 #share {
 	img {
-		width: 50px;
+		
 		margin-right: 25px;
 	}
 
@@ -191,7 +191,7 @@ ul#page-tabs {
 #thumbnail img{
   width:200px;
   height:200px;
-  margin:20px;  
+  margin:20px; 
 }
 
 canvas{
@@ -209,6 +209,7 @@ canvas{
 	cursor: pointer;
 	margin-top: -200px;
 	margin-left: -35px;
+	@include prefix(transition, 0.8s);  
 }
 
 .featured_photo_text {
@@ -221,9 +222,9 @@ canvas{
 	left: 20px;
 	width: 200px;
 	top: 180px;
-	font-size: 16px;
+	font-size: 16px !important;
 	padding-left: 10px;
-	padding-top: 5px;
+	padding-top: 8px;
 	
 }
 
@@ -310,6 +311,7 @@ canvas{
 
 	#video-container {
 		position: relative;
+		margin-top: 20px;
 	}
 
 	.video-close {
@@ -322,10 +324,20 @@ canvas{
 	color: white !important;
 	cursor: pointer;
 	position: absolute;
-	left: 364px;
+	left: 333px;
 	top: -14px;
 	}
 	
+}
+
+	// btns
+.back-btn-wrapper, #backbtn-step3 {
+		float: left;
+		display: inline-block;
+}
+#nextbtn-step3, .skip-btn, .skip-btn-wrapper {
+		float: right;
+		display: inline-block;
 }
 
 // ********** Step4 (final): Preview & Share **********
@@ -402,7 +414,7 @@ input[type="checkbox"]:checked:after {
 
 		h3 {
 			color: $pink;
-			margin-top: 0;
+			margin-top: 5px;
 			font-size: 30px;
 		}
 
@@ -426,7 +438,7 @@ input[type="checkbox"]:checked:after {
 	.preview-pictures-wrapper {
 		img {
 			width: 200px;
-			height: 200px;
+			height: auto;
 			margin: 10px;
 		}
 	}
@@ -442,8 +454,6 @@ input[type="checkbox"]:checked:after {
 	border-right: 8px solid #eee;
 	display: inline-block;
 	vertical-align: top;
-	
-	@include prefix(transition, 0.3s);
 }
 
 
@@ -454,8 +464,16 @@ input[type="checkbox"]:checked:after {
 }
 
 .checkboxes {
+	
+	text-align: left;
+
+	img {
+		height: 46px;
+	}
+	
 	span {
 		opacity: 0.5;
+		font-size: 16px;
 	}
 }
 
@@ -692,6 +710,30 @@ input[type="checkbox"]:checked:after {
 }
 
 @media (max-width: 640px) {
-	//step 3 btns responsive
+	//step3 btns responsive
+	.back-btn-wrapper, #backbtn-step3 {
+		float: none;
+		width: 162px;
+		margin: auto;
+		display: block;
+	}
+	 #nextbtn-step3, .skip-btn, .skip-btn-wrapper {
+		float: none;
+		width: 162px;
+		margin: auto;
+		display: block;
+	}
+}
+
+@media (max-width: 834px) {
+	.checkboxes {
+		width: 210px;
+	}
+
+	.steps {
+		max-width: 500px;
+		float: none;
+		margin: auto;
+	}
 
 }
